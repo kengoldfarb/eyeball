@@ -1,0 +1,47 @@
+<div id="section_content">
+	<h1>Commits</h1>
+	<ul id="commits">
+		<li>Commits here...</li>
+	</ul>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/jquery.min.js"></script>
+
+<script>
+var CD = CD || {};
+  CD.Global = {
+    'processCommits': function(latestCommits){
+      console.log('in processCommits');
+      for(var i = 0, len=latestCommits.length; i < len; i++){
+        var commit = latestCommits[i];
+        $('#commits').prepend('<li>' + JSON.stringify(commit) + '</li>');
+      }
+      console.log('finished processCommits');
+    },
+    // 'newCommits': function(newCommits){}
+  };
+
+var socket = io.connect('<%= geddy.config.clientFullHostname %>', {
+            'connect timeout': 500,
+            'reconnect': true,
+            'reconnection delay': 500,
+            'reopen delay': 500,
+            'max reconnection attempts': 10
+        });
+
+  socket.on('data', function(data) {
+  	// console.log(data);
+    CD.Global.processCommits(data);
+  });
+
+  socket.on('connect', function () { // TIP: you can avoid listening on `connect` and listen on events directly too!
+    console.log('CONNECTED!');
+    socket.emit('getLatestCommits', 'tobi', function (data) {
+      console.log(data);
+      CD.Global.processCommits(data);
+    });
+    console.log('finished binding to events!');
+  });
+</script>

@@ -1,0 +1,87 @@
+{
+	method: 'POST',
+	controller: 'Commits',
+	action: 'githubCallback',
+	payload: '{"pusher":{"name":"kengoldfarb","email":"ken@kengoldfarb.com"},"hook_callpath":"new","repository":{"name":"test-repo","size":112,"has_wiki":true,"created_at":"2013-01-15T21:57:22-08:00","private":false,"watchers":0,"url":"https://github.com/kengoldfarb/test-repo","fork":false,"id":7640181,"pushed_at":"2013-01-16T00:19:09-08:00","open_issues":0,"has_downloads":true,"has_issues":true,"stargazers":0,"description":"testing stuff","forks":0,"owner":{"name":"kengoldfarb","email":"ken@kengoldfarb.com"}},"forced":true,"head_commit":{"added":["README.md"],"modified":[],"timestamp":"2013-01-15T21:56:32-08:00","removed":[],"author":{"name":"Ken","username":"kengoldfarb","email":"kgoldfarb@cpbgroup.com"},"url":"https://github.com/kengoldfarb/test-repo/commit/46f6ea6ade4e9196597c0b29cbaa4d7193a667b4","id":"46f6ea6ade4e9196597c0b29cbaa4d7193a667b4","distinct":true,"message":"test","committer":{"name":"Ken","username":"kengoldfarb","email":"kgoldfarb@cpbgroup.com"}},"after":"46f6ea6ade4e9196597c0b29cbaa4d7193a667b4","deleted":false,"commits":[{"added":["README.md"],"modified":[],"timestamp":"2013-01-15T21:56:32-08:00","removed":[],"author":{"name":"Ken","username":"kengoldfarb","email":"kgoldfarb@cpbgroup.com"},"url":"https://github.com/kengoldfarb/test-repo/commit/46f6ea6ade4e9196597c0b29cbaa4d7193a667b4","id":"46f6ea6ade4e9196597c0b29cbaa4d7193a667b4","distinct":true,"message":"test","committer":{"name":"Ken","username":"kengoldfarb","email":"kgoldfarb@cpbgroup.com"}}],"ref":"refs/heads/master","before":"0000000000000000000000000000000000000000","compare":"https://github.com/kengoldfarb/test-repo/commit/46f6ea6ade4e","created":true}'
+}
+
+{
+	"pusher": {
+		"name": "kengoldfarb",
+		"email": "ken@kengoldfarb.com"
+	},
+	"hook_callpath": "new",
+	"repository": {
+		"name": "test-repo",
+		"size": 112,
+		"has_wiki": true,
+		"created_at": "2013-01-15T21:57:22-08:00",
+		"private": false,
+		"watchers": 0,
+		"url": "https://github.com/kengoldfarb/test-repo",
+		"fork": false,
+		"id": 7640181,
+		"pushed_at": "2013-01-16T00:19:09-08:00",
+		"open_issues": 0,
+		"has_downloads": true,
+		"has_issues": true,
+		"stargazers": 0,
+		"description": "testing stuff",
+		"forks": 0,
+		"owner": {
+			"name": "kengoldfarb",
+			"email": "ken@kengoldfarb.com"
+		}
+	},
+	"forced": true,
+	"head_commit": {
+		"added": ["README.md"],
+		"modified": [],
+		"timestamp": "2013-01-15T21:56:32-08:00",
+		"removed": [],
+		"author": {
+			"name": "Ken",
+			"username": "kengoldfarb",
+			"email": "kgoldfarb@cpbgroup.com"
+		},
+		"url": "https://github.com/kengoldfarb/test-repo/commit/46f6ea6ade4e9196597c0b29cbaa4d7193a667b4",
+		"id": "46f6ea6ade4e9196597c0b29cbaa4d7193a667b4",
+		"distinct": true,
+		"message": "test",
+		"committer": {
+			"name": "Ken",
+			"username": "kengoldfarb",
+			"email": "kgoldfarb@cpbgroup.com"
+		}
+	},
+	"after": "46f6ea6ade4e9196597c0b29cbaa4d7193a667b4",
+	"deleted": false,
+	"commits": [{
+		"added": ["README.md"],
+		"modified": [],
+		"timestamp": "2013-01-15T21:56:32-08:00",
+		"removed": [],
+		"author": {
+			"name": "Ken",
+			"username": "kengoldfarb",
+			"email": "kgoldfarb@cpbgroup.com"
+		},
+		"url": "https://github.com/kengoldfarb/test-repo/commit/46f6ea6ade4e9196597c0b29cbaa4d7193a667b4",
+		"id": "46f6ea6ade4e9196597c0b29cbaa4d7193a667b4",
+		"distinct": true,
+		"message": "test",
+		"committer": {
+			"name": "Ken",
+			"username": "kengoldfarb",
+			"email": "kgoldfarb@cpbgroup.com"
+		}
+	}],
+	"ref": "refs/heads/master",
+	"before": "0000000000000000000000000000000000000000",
+	"compare": "https://github.com/kengoldfarb/test-repo/commit/46f6ea6ade4e",
+	"created": true
+}
+
+
+
+
