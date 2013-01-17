@@ -48,8 +48,11 @@ There are some config files in the config/ directory including:
 * Script showing the commands used to generate the Geddy models
 
 ## Security
-###Use at your own risk
+### Use at your own risk
 There are absolutely no guarantees that anything in this repo is secure.  Security is up to you.  You should look at locking down Mongo, Nginx, etc. before ever using this in a production environment.
+
+### IP addresses used by github for callbacks
+https://help.github.com/articles/what-ip-addresses-does-github-use-that-i-should-whitelist
 
 ## License
 Pretty much...do whatever you want with it:
