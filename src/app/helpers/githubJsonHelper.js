@@ -16,9 +16,23 @@ var GithubJsonHelper = {
         commit.repository = json.repository;
         // console.log(commit);
         // return;
-        if(saveToDb === true){
-            commit.save();
-        }
+        
+        // Get .diff file
+        var request = require('request');
+        var theUrl = commit.url + '.diff';;
+        console.log(theUrl);
+        request.get({url: theUrl}, function(error, response, body) {
+            console.log('IN CALLBACK');
+            if(!error && response.statusCode == 200 && body !== undefined){
+              console.log(body);
+              commit.diff = body;
+            }
+
+            // save model
+            if(saveToDb === true){
+                commit.save();
+            }
+        });
         newCommits.push(commit);
       }
     }

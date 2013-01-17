@@ -28,6 +28,7 @@ url: "https://github.com/kengoldfarb/test-repo/commit/ee53daa4e1898262929a9e83de
     after: {type: 'string'},
     ref: {type: 'string'},
     repository: {type: 'object'},
+    diff: {type: 'string'},
   });
 
   /*

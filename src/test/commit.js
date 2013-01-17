@@ -19,7 +19,7 @@ tests = {
 		// request.post('http://localhost:4014/commits/githubCallback', {form:{commits:commits}});
 
 
-    // request.post('http://localhost:4014/commits/githubCallback', {form:{payload:JSON.stringify(thePayload)}});
+    	request.post('http://localhost:4014/commits/githubCallback', {form:{payload:JSON.stringify(thePayload)}});
 		
 		return;
 		// assert.equal(true, false);

@@ -19,10 +19,10 @@ geddy.io.configure(function() {
 });
 
 geddy.io.sockets.on('connection', function (socket) {
-	console.log(geddy.io.transports[socket.id].name);
-	console.log(geddy.io.transports[socket.id]);
-	socket.on('getLatestCommits', function (name, fn) {
-		console.log(name);
+	// console.log(geddy.io.transports[socket.id].name);
+	// console.log(geddy.io.transports[socket.id]);
+	socket.on('getLatestCommits', function (fn) {
+		// console.log(name);
 		geddy.model.Commit.all(function(err, commits) {
 	        fn(commits);
 	      });

@@ -46,6 +46,19 @@ var Commits = function() {
           });
         }
       });
+
+      
+
+      // Save the .diff file to disk
+      // var fs = require('fs');
+      // var fullFilePath = geddy.config.staticFilePath + '/' + commit.before + '_' + commit.githubId + '.diff';
+      // fs.writeFile(fullFilePath, "Hey there!", function(err) {
+      //     if(err) {
+      //         console.log(err);
+      //     } else {
+      //         console.log("The file was saved!");
+      //     }
+      // }); 
     };
 
     this.show = function(req, resp, params) {
