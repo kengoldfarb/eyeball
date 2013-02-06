@@ -42,5 +42,7 @@ router.get('/').to('Main.index');
 router.post('/commits/githubCallback').to('Commits.githubCallback');
 router.get('/commits/githubCallback').to('Commits.githubCallback');
 
+router.get('/sim').to('Simulator.doSim');
+
 router.resource('commits');
 exports.router = router;

@@ -17,11 +17,30 @@
 */
 
 var Main = function () {
+  // Example of getting info on a commit
   this.index = function (req, resp, params) {
-    this.respond(params, {
-      format: 'html'
-    , template: 'app/views/main/index'
-    });
+  	var self = this,
+  		github = require('../helpers/github_helper');
+
+  	var params = {
+	  	user: 'kengoldfarb',
+	    repo: 'eyeball',
+	    sha: 'e1a4edbb1eead350a5a8a81560ae5865af945ca4'
+	};
+  	github.getCommitInfo(params, function(err, commit){
+  		if(err){
+  			self.respond('ERROR!', {
+		      format: 'txt'
+		    });
+  		}
+
+  		// console.log('All done!');
+  		// console.log(commit);
+
+  		self.respond('hello', {
+	      format: 'txt'
+	    });
+  	});
   };
 };
 

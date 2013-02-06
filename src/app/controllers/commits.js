@@ -13,17 +13,18 @@ var Commits = function() {
     };
 
     this.githubCallback = function(req, resp, params) {
-      var self = this;
-      // console.log(req);
-      // console.log(resp);
-      // console.log(params);
-      var payload = JSON.parse(params.payload);
-      // console.log(payload);
-      var commits = geddy.helpers.GithubJsonHelper.jsonToCommits(payload, geddy.config.saveModelsToDb);
+      var self = this,
+          githubHelper = require('../helpers/github_helper'),
+          payload = JSON.parse(params.payload);
 
-      console.log(commits);
-      geddy.io.sockets.emit('data', commits);
-      this.respond('well that worked | ' + new Date().toString(), {'format': 'txt'});
+      githubHelper.callbackJsonToCommits(payload, geddy.config.saveModelsToDb, function(err, commits){
+        if(err){
+          self.respond('ERROR! | ' + new Date().toString(), {'format': 'txt'});  
+          return;
+        }
+        geddy.io.sockets.emit('data', commits);
+        self.respond('well that worked | ' + new Date().toString(), {'format': 'txt'});
+      });
     }
 
     this.add = function(req, resp, params) {
