@@ -1,2 +1,10 @@
+
+*.swp
+*.swo
+dist
+source/node_modules
+*.DS_Store
+.sass-cache
 *.log
-.DS_Store
+/source/public/javascripts/generated/app.min.js
+config/secrets.json
