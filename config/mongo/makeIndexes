@@ -1,0 +1,1 @@
+db.ensureIndex( { githubId: 1 }, { unique: true, sparse: true, dropDups: true } )
